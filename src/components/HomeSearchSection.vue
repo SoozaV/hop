@@ -36,7 +36,6 @@
                 label-for="input-1"
                 label-align="left"
                 class="custom-select"
-                
               >
                 <!-- Horario -->
                 <b-form-select
@@ -44,7 +43,7 @@
                   onblur="this.size=1;"
                   onchange="this.size=1; this.blur();"
                   onfocusout="this.size=null;"
-                  v-model="selectedDisponibilidad"
+                  v-model="selected.disponibilidad"
                   :options="optionsDisponibilidad"
                 ></b-form-select>
               </b-form-group>
@@ -63,7 +62,7 @@
                   onblur="this.size=1;"
                   onchange="this.size=1; this.blur();"
                   onfocusout="this.size=null;"
-                  v-model="selectedCaracteristicas"
+                  v-model="selected.caracteristicas"
                   :options="optionsCaracteristicas"
                 ></b-form-select>
               </b-form-group>
@@ -85,7 +84,7 @@
                   onblur="this.size=1;"
                   onchange="this.size=1; this.blur();"
                   onfocusout="this.size=null;"
-                  v-model="selectedPresupuesto"
+                  v-model="selected.presupuesto"
                   :options="optionsPresupuesto"
                 ></b-form-select>
               </b-form-group>
@@ -104,17 +103,102 @@
                   onblur="this.size=1;"
                   onchange="this.size=1; this.blur();"
                   onfocusout="this.size=null;"
-                  v-model="selectedIntereses"
+                  v-model="selected.intereses"
                   :options="optionsIntereses"
                 ></b-form-select>
               </b-form-group>
             </b-col>
           </b-row>
+          <b-collapse id="collapse-1">
+            <b-row class="form-field-container mt-2 mx-auto">
+              <b-col>
+                <b-form-group
+                  id="input-group-1"
+                  label="Áreas comunes"
+                  label-for="input-1"
+                  label-align="left"
+                  class="custom-select"
+                >
+                  <!-- Áreas Comunes -->
+                  <b-form-select
+                    onfocus="this.size=5;"
+                    onblur="this.size=1;"
+                    onchange="this.size=1; this.blur();"
+                    onfocusout="this.size=null;"
+                    v-model="selected.areasComunes"
+                    :options="optionsAreas"
+                  ></b-form-select>
+                </b-form-group>
+              </b-col>
+              <b-col class="right-form-col col">
+                <b-form-group
+                  id="input-group-1"
+                  label="Reglas"
+                  label-for="input-1"
+                  label-align="left"
+                  class="custom-select"
+                >
+                  <!-- Reglas -->
+                  <b-form-select
+                    onfocus="this.size=5;"
+                    onblur="this.size=1;"
+                    onchange="this.size=1; this.blur();"
+                    onfocusout="this.size=null;"
+                    v-model="selected.reglas"
+                    :options="optionsReglas"
+                  ></b-form-select>
+                </b-form-group>
+              </b-col>
+            </b-row>
+            <b-row class="form-field-container mt-2 mx-auto">
+              <b-col>
+                <b-form-group
+                  id="input-group-1"
+                  label="Servicios"
+                  label-for="input-1"
+                  label-align="left"
+                  class="custom-select"
+                >
+                  <!-- Servicios -->
+                  <b-form-select
+                    onfocus="this.size=5;"
+                    onblur="this.size=1;"
+                    onchange="this.size=1; this.blur();"
+                    onfocusout="this.size=null;"
+                    v-model="selected.servicios"
+                    :options="optionsServicios"
+                  ></b-form-select>
+                </b-form-group>
+              </b-col>
+              <b-col class="right-form-col col">
+                <b-form-group
+                  id="input-group-1"
+                  label="Intereses de Partners"
+                  label-for="input-1"
+                  label-align="left"
+                  class="custom-select"
+                >
+                  <!-- Intereses de Partners -->
+                  <b-form-select
+                    onfocus="this.size=5;"
+                    onblur="this.size=1;"
+                    onchange="this.size=1; this.blur();"
+                    onfocusout="this.size=null;"
+                    v-model="selected.interesesPartners"
+                    :options="optionsPartners"
+                  ></b-form-select>
+                </b-form-group>
+              </b-col>
+            </b-row>
+          </b-collapse>
           <b-row>
             <b-col>
-              <b-button type="submit" class="hop-btn shadow-none"
-                >Búsqueda</b-button
-              >
+              <b-button type="submit" class="hop-btn shadow-none" style="margin-right: 5px;">
+                Búsqueda
+              </b-button>
+              <b-button v-b-toggle.collapse-1 @click="toggleAdvancedSymbol" class="hop-btn shadow-none advanced">
+                {{advancedSymbol}}
+              </b-button>
             </b-col>
           </b-row>
         </b-form>
@@ -124,15 +208,28 @@
 </template>
 
 <script>
-
 export default {
   name: "HomeSearchSection",
+  methods: {
+    toggleAdvancedSymbol () {
+      this.advancedSymbol === "+"
+        ? this.advancedSymbol = "-"
+        : this.advancedSymbol = "+"
+    }
+  },
   data() {
     return {
-      selectedDisponibilidad: null,
-      selectedCaracteristicas: null,
-      selectedPresupuesto: null,
-      selectedIntereses: null,
+      advancedSymbol: "+",
+      selected: {
+        disponibilidad: null,
+        caracteristicas: null,
+        presupuesto: null,
+        intereses: null,
+        areasComunes: null,
+        reglas: null,
+        servicios: null,
+        interesesPartners: null,
+      },
       optionsDisponibilidad: [
         { value: null, text: "Tipos de horario" },
         { value: "a", text: "Opción 1" },
@@ -156,6 +253,34 @@ export default {
       ],
       optionsIntereses: [
         { value: null, text: "Acerca de ti" },
+        { value: "a", text: "Opción 1" },
+        { value: "b", text: "Opción 2" },
+        { value: "c", text: "Opción 3" },
+        { value: "d", text: "Opción 4" },
+      ],
+      optionsAreas: [
+        { value: null, text: "Qué incluye" },
+        { value: "a", text: "Opción 1" },
+        { value: "b", text: "Opción 2" },
+        { value: "c", text: "Opción 3" },
+        { value: "d", text: "Opción 4" },
+      ],
+      optionsReglas: [
+        { value: null, text: "Qué se permite" },
+        { value: "a", text: "Opción 1" },
+        { value: "b", text: "Opción 2" },
+        { value: "c", text: "Opción 3" },
+        { value: "d", text: "Opción 4" },
+      ],
+      optionsServicios: [
+        { value: null, text: "Qué incluye" },
+        { value: "a", text: "Opción 1" },
+        { value: "b", text: "Opción 2" },
+        { value: "c", text: "Opción 3" },
+        { value: "d", text: "Opción 4" },
+      ],
+      optionsPartners: [
+        { value: null, text: "Tipos de partners" },
         { value: "a", text: "Opción 1" },
         { value: "b", text: "Opción 2" },
         { value: "c", text: "Opción 3" },
@@ -203,7 +328,8 @@ export default {
       text-align: left;
     }
   }
-  input {
+  input,
+  textarea {
     padding: 0;
     border: 0;
     font-family: "Montserrat", sans-serif;
@@ -243,13 +369,18 @@ export default {
   }
 }
 .btn.hop-btn {
-  background-color: #fcca2e!important;
+  background-color: #fcca2e !important;
   font-family: "Montserrat", sans-serif;
   border: 0;
-  color: #1d1d1d!important;
+  color: #1d1d1d !important;
   font-size: 12px;
   border-radius: 50px;
   margin-top: 39px;
   padding: 9px 33px;
+  &.advanced {
+    padding: 9px 15px;
+    margin-left: 5px;
+  }
 }
+
 </style>
