@@ -1,16 +1,21 @@
 <template>
   <b-container class="sign-up">
-    <b-row>
-      <b-col>
-        <router-link class="btn" to="/">Home</router-link>
+    <b-row class="sign-buttons">
+      <b-col style="text-align: right;">
+        <router-link class="btn hop-btn sign-btn login-btn shadow-none" to="/login">Login</router-link>
       </b-col>
-      <b-col>
-        <router-link class="btn" to="/signup">Sign Up</router-link>
+      <b-col style="text-align: left;">
+        <router-link class="btn hop-btn sign-btn signUp-btn shadow-none" to="/signup">Sign Up</router-link>
       </b-col>
     </b-row>
     <b-row>
       <b-col>
         <b-form>
+          <b-row class="form-field-container sign-user mx-auto">
+            <b-col>
+              <img :src="userAvatar" alt="" class="user-avatar" />
+            </b-col>
+          </b-row>
           <b-row class="form-field-container sign-user mx-auto">
             <b-col>
               <b-form-group
@@ -272,6 +277,7 @@ export default {
   },
   data() {
     return {
+      userAvatar: require("../assets/img/user@4x.webp"),
       selected: {
         idioma: null,
         pais: null,
@@ -290,6 +296,11 @@ export default {
     &.sign-user {
       border: 0;
       border-radius: 0;
+      .user-avatar {
+        width: 120px;
+        max-width: 90%;
+        margin: 70px 0 45px;
+      }
       .form-group {
         border-bottom: 1px solid;
         &.birthday {
@@ -319,6 +330,18 @@ export default {
     &.block {
       width: 90%;
     }
+    &.login-btn, &.signUp-btn {
+      font-size: 15px;
+      width: 116px;
+      max-width: 116px;
+      border: 1px solid #fcca2e;
+      margin-top: 0;
+    }
+    &.login-btn {
+      background-color: white!important;
+      border: 1px solid;
+    }
   }
 }
+
 </style>
