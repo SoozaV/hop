@@ -29,7 +29,7 @@
               <b-badge>2</b-badge>
             </div>
           </b-list-group-item>
-          <b-list-group-item class="d-flex">
+          <b-list-group-item to="/chat" class="d-flex">
             <b-avatar
               badge
               badge-variant="success"
@@ -43,7 +43,7 @@
               <span class="chat-time-text">12:00</span>
             </div>
           </b-list-group-item>
-          <b-list-group-item class="d-flex">
+          <b-list-group-item to="/chat" class="d-flex">
             <b-avatar
               :src="userAvatar"
             ></b-avatar>
@@ -56,7 +56,7 @@
               <b-badge>2</b-badge>
             </div>
           </b-list-group-item>
-          <b-list-group-item class="d-flex">
+          <b-list-group-item to="/chat" class="d-flex">
             <b-avatar
               badge
               badge-variant="success"
@@ -70,7 +70,7 @@
               <span class="chat-time-text">12:00</span>
             </div>
           </b-list-group-item>
-          <b-list-group-item class="d-flex">
+          <b-list-group-item to="/chat" class="d-flex">
             <b-avatar
 
               :src="userAvatar"
@@ -83,7 +83,7 @@
               <span class="chat-time-text">12:00</span>
             </div>
           </b-list-group-item>
-          <b-list-group-item class="d-flex">
+          <b-list-group-item to="/chat" class="d-flex">
             <b-avatar
 
               :src="userAvatar"

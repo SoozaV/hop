@@ -25,7 +25,7 @@
         </router-link>
       </b-col>
       <b-col cols="12">
-        <router-link to="/">
+        <router-link to="/perfil">
           <p class="h2" style="margin-bottom: 0; display: inline-block">
             <b-icon icon="person"></b-icon>
           </p>
@@ -41,7 +41,7 @@
         </router-link>
       </b-col>
       <b-col cols="12">
-        <router-link to="/">
+        <router-link to="/solicitudes">
           <p class="h2" style="margin-bottom: 0; display: inline-block">
             <b-icon icon="bell"></b-icon>
           </p>

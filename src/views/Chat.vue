@@ -215,9 +215,6 @@ export default {
             float: none;
             display: flex;
             //align-items: baseline;
-            img {
-              //margin: 6px 8px 0 0;
-            }
             p {
               background: #1d1d1d;
               color: #f5f5f5;
