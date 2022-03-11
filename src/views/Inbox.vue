@@ -14,7 +14,7 @@
     <b-row class="chat-group">
       <b-col cols="12">
         <b-list-group class="mt-5 shadow">
-          <b-list-group-item class="d-flex">
+          <b-list-group-item to="/chat" class="d-flex">
             <b-avatar
               badge
               badge-variant="success"
