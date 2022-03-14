@@ -294,7 +294,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 .home-search {
-  margin: 0;
+  margin: 0 auto;
   max-width: 920px!important;
   padding-top: 20px;
   .row {
