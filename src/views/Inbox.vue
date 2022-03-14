@@ -1,7 +1,7 @@
 <template>
   <b-container class="inbox-view">
-    <b-row>
-      <b-col>
+    <b-row align-h="center">
+      <b-col lg="8">
         <b-form-input
           class="border rounded-pill shadow"
           style="border-color: #f5f5f5"
@@ -11,8 +11,8 @@
       </b-col>
     </b-row>
 
-    <b-row class="chat-group">
-      <b-col cols="12">
+    <b-row align-h="center" class="chat-group">
+      <b-col cols="12" lg="8">
         <b-list-group class="mt-5 shadow">
           <b-list-group-item to="/chat" class="d-flex">
             <b-avatar

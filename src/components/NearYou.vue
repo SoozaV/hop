@@ -7,10 +7,16 @@
       </b-col>
     </b-row>
     <b-row>
-      <b-col>
+      <b-col sm="12" md="6" lg="4">
         <Property />
+      </b-col>
+      <b-col sm="12" md="6" lg="4">
         <Property bgColor="#e3e3e3" />
+      </b-col>
+      <b-col sm="12" md="6" lg="4">
         <Property />
+      </b-col>
+      <b-col cols="12">
         <b-button type="submit" class="hop-btn shadow-none"
           >Mostrar más</b-button
         >

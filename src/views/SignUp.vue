@@ -8,8 +8,8 @@
         <router-link class="btn hop-btn sign-btn signUp-btn shadow-none" to="/signup">Sign Up</router-link>
       </b-col>
     </b-row>
-    <b-row>
-      <b-col>
+    <b-row align-h="center">
+      <b-col lg="7">
         <b-form>
           <b-row class="form-field-container sign-user mx-auto">
             <b-col>

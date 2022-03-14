@@ -14,9 +14,9 @@
             >
           </b-col>
         </b-row>
-        <b-row>
-          <b-col>
-            <b-img :src="ctaBackground" fluid-grow alt="" style="margin-bottom: 10px"></b-img>
+        <b-row style="max-width: 620px!important; margin: 0 auto;">
+          <b-col style="padding-left: 0; padding-right: 0;">
+            <b-img :src="ctaBackground" fluid-grow alt="" style="margin-bottom: 10px; max-width: 100%"></b-img>
           </b-col>
         </b-row>
       </b-col>
@@ -39,7 +39,7 @@ export default {
 <style lang="scss">
 .cta-section {
   background: #1d1d1d;
-  max-width: 100%;
+  max-width: 620px!important;
   margin: 39px auto 0 !important;
   padding-top: 45px;
   border-radius: 10px 10px 0 0;

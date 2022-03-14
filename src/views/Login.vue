@@ -16,8 +16,8 @@
         >
       </b-col>
     </b-row>
-    <b-row style="margin-top: 40px">
-      <b-col>
+    <b-row align-h="center" style="margin-top: 40px">
+      <b-col lg="7">
         <b-form>
           <b-row class="form-field-container sign-user mx-auto">
             <b-col>
@@ -147,7 +147,8 @@ export default {
     }
   }
   .social-login-section {
-    margin: 50px 0 10px;
+    margin: 50px auto 10px;
+    max-width: 920px!important;
     h4 {
       font-family: "Montserrat", sans-serif;
       font-size: 15px;

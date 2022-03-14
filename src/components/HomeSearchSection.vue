@@ -295,6 +295,7 @@ export default {
 <style lang="scss">
 .home-search {
   margin: 0;
+  max-width: 920px!important;
   padding-top: 20px;
   .row {
     .col {

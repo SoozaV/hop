@@ -1,7 +1,7 @@
 <template>
   <b-container class="solicitudes-view">
-    <b-row class="view-title">
-      <b-col>
+    <b-row align-h="center" class="view-title">
+      <b-col lg="8" class="col">
         <h2>Comparte experiencias</h2>
         <h3>
           Consulta el estado de tu solicitud y reserva el número de horas ó días
@@ -10,8 +10,8 @@
       </b-col>
     </b-row>
 
-    <b-row class="solicitudes-group">
-      <b-col cols="12">
+    <b-row align-h="center" class="solicitudes-group">
+      <b-col cols="12" lg="8">
         <b-list-group class="mt-3 shadow">
           <b-list-group-item to="/chat" class="d-flex">
             <b-avatar

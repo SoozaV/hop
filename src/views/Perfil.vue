@@ -177,7 +177,7 @@
 import Footer from "@/components/Footer.vue";
 
 export default {
-  name: "SignUp",
+  name: "Perfil",
   components: {
     Footer,
   },

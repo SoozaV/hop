@@ -33,7 +33,7 @@
         </router-link>
       </b-col>
       <b-col cols="12">
-        <router-link to="/">
+        <router-link to="/miHomeOffice">
           <p class="h2" style="margin-bottom: 0; display: inline-block">
             <img :src="logo" class="hop-logo black" />
           </p>
@@ -96,6 +96,8 @@ export default {
     margin-bottom: 35px;
   }
   .menu-links {
+    max-width: 620px!important;
+    margin: 0 auto;
     .col-12 {
       display: flex;
       justify-content: flex-start;

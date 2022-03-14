@@ -1,6 +1,6 @@
 <template>
   <b-container class="chat-view">
-    <b-row class="chat-group">
+    <b-row fluid class="chat-group">
       <b-col cols="12">
         <b-list-group>
           <b-list-group-item
@@ -78,8 +78,8 @@
         </div>
       </b-col>
     </b-row>
-    <b-row class="chat-input">
-      <b-col>
+    <b-row align-h="center" class="chat-input">
+      <b-col lg="8">
         <b-input-group
           class="border rounded-pill shadow"
           style="border-color: #f5f5f5"
@@ -118,6 +118,7 @@ export default {
   .chat-input {
     position: fixed;
     bottom: 0;
+    left: 12px;
     width: 100%;
     padding-bottom: 25px;
     background: white;
@@ -142,7 +143,7 @@ export default {
     padding-top: 7px;
     position: -webkit-sticky;
     position: sticky;
-    top: 0px;
+    top: 0px;   
     z-index: 1;
     .col-12 {
       .list-group {
