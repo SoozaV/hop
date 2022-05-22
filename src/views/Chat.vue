@@ -1,8 +1,91 @@
 <template>
   <b-container class="chat-view">
-    <b-row fluid class="chat-group">
-      <b-col cols="12">
-        <b-list-group>
+    <b-row fluid>
+      <SideMenu :col="3" />
+      <b-col lg="3" class="desk-list hide-on-mobile">
+        <b-row align-h="center" class="chat-group shadow-none">
+          <b-col cols="12">
+            <b-list-group class="">
+              <b-list-group-item to="/chat" class="d-flex">
+                <b-avatar
+                  badge
+                  badge-variant="success"
+                  :src="userAvatar"
+                ></b-avatar>
+                <div class="chat-list-body">
+                  <span class="chat-name">Luis Suarez Martinez</span>
+                  <span class="chat-preview">Lorem Ipsum Dolor sit amet.</span>
+                </div>
+                <div class="chat-time">
+                  <span class="chat-time-text">Now</span>
+                  <b-badge>2</b-badge>
+                </div>
+              </b-list-group-item>
+              <b-list-group-item to="/chat" class="d-flex">
+                <b-avatar
+                  badge
+                  badge-variant="success"
+                  :src="userAvatar"
+                ></b-avatar>
+                <div class="chat-list-body">
+                  <span class="chat-name">Carlos Olivares</span>
+                  <span class="chat-preview">Lorem Ipsum Dolor sit amet.</span>
+                </div>
+                <div class="chat-time">
+                  <span class="chat-time-text">12:00</span>
+                </div>
+              </b-list-group-item>
+              <b-list-group-item to="/chat" class="d-flex">
+                <b-avatar :src="userAvatar"></b-avatar>
+                <div class="chat-list-body">
+                  <span class="chat-name">Mariana Sanchez</span>
+                  <span class="chat-preview">Lorem Ipsum Dolor sit amet.</span>
+                </div>
+                <div class="chat-time">
+                  <span class="chat-time-text">12:00</span>
+                  <b-badge>2</b-badge>
+                </div>
+              </b-list-group-item>
+              <b-list-group-item to="/chat" class="d-flex">
+                <b-avatar
+                  badge
+                  badge-variant="success"
+                  :src="userAvatar"
+                ></b-avatar>
+                <div class="chat-list-body">
+                  <span class="chat-name">Paola Gonzalez</span>
+                  <span class="chat-preview">Lorem Ipsum Dolor sit amet.</span>
+                </div>
+                <div class="chat-time">
+                  <span class="chat-time-text">12:00</span>
+                </div>
+              </b-list-group-item>
+              <b-list-group-item to="/chat" class="d-flex">
+                <b-avatar :src="userAvatar"></b-avatar>
+                <div class="chat-list-body">
+                  <span class="chat-name">Roberto Salinas</span>
+                  <span class="chat-preview">Lorem Ipsum Dolor sit amet.</span>
+                </div>
+                <div class="chat-time">
+                  <span class="chat-time-text">12:00</span>
+                </div>
+              </b-list-group-item>
+              <b-list-group-item to="/chat" class="d-flex">
+                <b-avatar :src="userAvatar"></b-avatar>
+                <div class="chat-list-body">
+                  <span class="chat-name">Pablo Rivera</span>
+                  <span class="chat-preview">Lorem Ipsum Dolor sit amet.</span>
+                </div>
+                <div class="chat-time">
+                  <span class="chat-time-text">12:00</span>
+                </div>
+              </b-list-group-item>
+            </b-list-group>
+          </b-col>
+        </b-row>
+      </b-col>
+      <b-col cols="12" lg="6" class="chat-group shadow-none">
+        <b-list-group class="hide-on-desk">
           <b-list-group-item
             class="d-flex align-items-center justify-content-center border-0"
           >
@@ -16,93 +99,99 @@
               badge-variant="success"
               :src="userAvatar"
             ></b-avatar>
-            <div class="chat-list-body">
+            <div class="chat-body">
               <span class="chat-name">Luis Suarez Martinez</span>
               <span class="chat-preview">Lorem Ipsum Dolor sit amet.</span>
             </div>
           </b-list-group-item>
         </b-list-group>
-      </b-col>
-    </b-row>
-
-    <b-row class="chat-container">
-      <b-col cols="12">
-        <div class="messages">
-          <ul class="pl-0">
-            <li class="sent">
-              <b-avatar size="1.6rem" :src="userAvatar"></b-avatar>
-              <p>
-                How the hell am I supposed to get a jury to believe you when I
-                am not even sure that I do?!
-              </p>
-            </li>
-            <li class="replies">
-              <b-avatar size="1.6rem" :src="userAvatar"></b-avatar>
-              <p>
-                When you're backed against the wall, break the god damn thing
-                down.
-              </p>
-            </li>
-            <li class="replies">
-              <b-avatar size="1.6rem" :src="userAvatar"></b-avatar>
-              <p>Excuses don't win championships.</p>
-            </li>
-            <li class="sent">
-              <b-avatar size="1.6rem" :src="userAvatar"></b-avatar>
-              <p>Oh yeah, did Michael Jordan tell you that?</p>
-            </li>
-            <li class="replies">
-              <b-avatar size="1.6rem" :src="userAvatar"></b-avatar>
-              <p>No, I told him that.</p>
-            </li>
-            <li class="replies">
-              <b-avatar size="1.6rem" :src="userAvatar"></b-avatar>
-              <p>What are your choices when someone puts a gun to your head?</p>
-            </li>
-            <li class="sent">
-              <b-avatar size="1.6rem" :src="userAvatar"></b-avatar>
-              <p>
-                What are you talking about? You do what they say or they shoot
-                you.
-              </p>
-            </li>
-            <li class="replies">
-              <b-avatar size="1.6rem" :src="userAvatar"></b-avatar>
-              <p>
-                Wrong. You take the gun, or you pull out a bigger one. Or, you
-                call their bluff. Or, you do any one of a hundred and forty six
-                other things.
-              </p>
-            </li>
-          </ul>
-        </div>
-      </b-col>
-    </b-row>
-    <b-row align-h="center" class="chat-input">
-      <b-col lg="8">
-        <b-input-group
-          class="border rounded-pill shadow"
-          style="border-color: #f5f5f5"
-        >
-          <b-form-input
-            class="border-0 rounded-pill shadow-none"
-            v-model="searchText"
-            placeholder="Mensaje..."
-          ></b-form-input>
-          <b-input-group-append>
-            <p class="h2 mb-0" style="margin-right: 15px">
-              <b-icon style="color: black" icon="paperclip"></b-icon>
-            </p>
-          </b-input-group-append>
-        </b-input-group>
+        <b-row class="chat-container">
+          <b-col cols="12">
+            <div class="messages">
+              <ul class="pl-0">
+                <li class="sent">
+                  <b-avatar size="1.6rem" :src="userAvatar"></b-avatar>
+                  <p>
+                    How the hell am I supposed to get a jury to believe you when
+                    I am not even sure that I do?!
+                  </p>
+                </li>
+                <li class="replies">
+                  <b-avatar size="1.6rem" :src="userAvatar"></b-avatar>
+                  <p>
+                    When you're backed against the wall, break the god damn
+                    thing down.
+                  </p>
+                </li>
+                <li class="replies">
+                  <b-avatar size="1.6rem" :src="userAvatar"></b-avatar>
+                  <p>Excuses don't win championships.</p>
+                </li>
+                <li class="sent">
+                  <b-avatar size="1.6rem" :src="userAvatar"></b-avatar>
+                  <p>Oh yeah, did Michael Jordan tell you that?</p>
+                </li>
+                <li class="replies">
+                  <b-avatar size="1.6rem" :src="userAvatar"></b-avatar>
+                  <p>No, I told him that.</p>
+                </li>
+                <li class="replies">
+                  <b-avatar size="1.6rem" :src="userAvatar"></b-avatar>
+                  <p>
+                    What are your choices when someone puts a gun to your head?
+                  </p>
+                </li>
+                <li class="sent">
+                  <b-avatar size="1.6rem" :src="userAvatar"></b-avatar>
+                  <p>
+                    What are you talking about? You do what they say or they
+                    shoot you.
+                  </p>
+                </li>
+                <li class="replies">
+                  <b-avatar size="1.6rem" :src="userAvatar"></b-avatar>
+                  <p>
+                    Wrong. You take the gun, or you pull out a bigger one. Or,
+                    you call their bluff. Or, you do any one of a hundred and
+                    forty six other things.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </b-col>
+        </b-row>
+        <b-row align-h="center" class="chat-input">
+          <b-col lg="8">
+            <b-input-group
+              class="border rounded-pill shadow"
+              style="border-color: #f5f5f5"
+            >
+              <b-form-input
+                class="border-0 rounded-pill shadow-none"
+                v-model="searchText"
+                placeholder="Mensaje..."
+              ></b-form-input>
+              <b-input-group-append>
+                <p class="h2 mb-0" style="margin-right: 15px">
+                  <b-icon style="color: black" icon="paperclip"></b-icon>
+                </p>
+              </b-input-group-append>
+            </b-input-group>
+          </b-col>
+        </b-row>
       </b-col>
     </b-row>
   </b-container>
 </template>
 
 <script>
+import SideMenu from "@/components/SideMenu.vue";
+
 export default {
   name: "Chat",
+  components: {
+    SideMenu,
+  },
   data() {
     return {
       searchText: "",
@@ -143,7 +232,7 @@ export default {
     padding-top: 7px;
     position: -webkit-sticky;
     position: sticky;
-    top: 0px;   
+    top: 0px;
     z-index: 1;
     .col-12 {
       .list-group {
@@ -158,6 +247,7 @@ export default {
             }
           }
         }
+
         .chat-list-body {
           .chat-name {
             color: #1d1d1d;
@@ -191,12 +281,31 @@ export default {
       }
     }
   }
+  .chat-body {
+    margin-left: 20px;
+    .chat-name {
+      color: #1d1d1d;
+      font-family: "Montserrat", sans-serif !important;
+      font-size: 14px;
+      font-weight: bold;
+      display: block;
+      text-align: left;
+    }
+    .chat-preview {
+      color: #858687;
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      display: block;
+      text-align: left;
+    }
+  }
   .chat-container {
-    overflow: hidden;
+    overflow-y: scroll;
+    max-height: 80vh;
     .messages {
       height: auto;
-      min-height: calc(100% - 93px);
-      max-height: calc(100% - 93px);
+      min-height: calc(100%);
+      max-height: calc(100%);
       //overflow-y: scroll;
       //overflow-x: hidden;
       ul {
@@ -251,6 +360,25 @@ export default {
           }
         }
       }
+    }
+  }
+}
+@media screen and (min-width: 991px) {
+  .chat-view {
+    .hide-on-desk {
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 991px) {
+  .chat-view {
+    .hide-on-mobile {
+      display: none;
+    }
+    .chat-container {
+      overflow-y: initial;
+      max-height: initial;
+      padding-bottom: 30px;
     }
   }
 }

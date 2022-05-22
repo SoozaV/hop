@@ -1,17 +1,15 @@
 <template>
   <b-container class="solicitudes-view">
     <b-row align-h="center" class="view-title">
+      <SideMenu />
       <b-col lg="8" class="col">
         <h2>Comparte experiencias</h2>
         <h3>
           Consulta el estado de tu solicitud y reserva el número de horas ó días
           de acuerdo a tus necesidades.
         </h3>
-      </b-col>
-    </b-row>
-
-    <b-row align-h="center" class="solicitudes-group">
-      <b-col cols="12" lg="8">
+        <b-row align-h="center" class="solicitudes-group">
+      <b-col cols="12">
         <b-list-group class="mt-3 shadow">
           <b-list-group-item to="/chat" class="d-flex">
             <b-avatar
@@ -22,7 +20,9 @@
             <div class="solicitudes-list-body">
               <span class="status-name">Best Place Co-working</span>
               <span class="direction">Dirección # 123 Col. Reforma</span>
-              <span class="status">Status: {{ status.aprobada ? "Aprobada" : "Denegada" }}</span>
+              <span class="status"
+                >Status: {{ status.aprobada ? "Aprobada" : "Denegada" }}</span
+              >
             </div>
             <div class="status-time">
               <span class="status-time-text">Dic 23</span>
@@ -38,7 +38,9 @@
             <div class="solicitudes-list-body">
               <span class="status-name">Awesome CW</span>
               <span class="direction">Dirección # 123 Col. Doctores</span>
-              <span class="status">Status: {{ status.aprobada ? "Aprobada" : "Denegada" }}</span>
+              <span class="status"
+                >Status: {{ status.aprobada ? "Aprobada" : "Denegada" }}</span
+              >
             </div>
             <div class="status-time">
               <span class="status-time-text">Nov 2</span>
@@ -49,7 +51,9 @@
             <div class="solicitudes-list-body">
               <span class="status-name">Nice Place</span>
               <span class="direction">Dirección # 123 Col. Narvarte</span>
-              <span class="status">Status: {{ !status.aprobada ? "Aprobada" : "Denegada" }}</span>
+              <span class="status"
+                >Status: {{ !status.aprobada ? "Aprobada" : "Denegada" }}</span
+              >
             </div>
             <div class="status-time">
               <span class="status-time-text">Oct 14</span>
@@ -64,7 +68,9 @@
             <div class="solicitudes-list-body">
               <span class="status-name">Just Coffee</span>
               <span class="direction">Dirección # 123 Col. Roma</span>
-              <span class="status">Status: {{ status.aprobada ? "Aprobada" : "Denegada" }}</span>
+              <span class="status"
+                >Status: {{ status.aprobada ? "Aprobada" : "Denegada" }}</span
+              >
             </div>
             <div class="status-time">
               <span class="status-time-text">Sep 2</span>
@@ -75,7 +81,9 @@
             <div class="solicitudes-list-body">
               <span class="status-name">Networking Studio</span>
               <span class="direction">Dirección # 123 Col. Juarez</span>
-              <span class="status">Status: {{ !status.aprobada ? "Aprobada" : "Denegada" }}</span>
+              <span class="status"
+                >Status: {{ !status.aprobada ? "Aprobada" : "Denegada" }}</span
+              >
             </div>
             <div class="status-time">
               <span class="status-time-text">Ago 4</span>
@@ -90,7 +98,9 @@
             <div class="solicitudes-list-body">
               <span class="status-name">Best Place Co-working</span>
               <span class="direction">Dirección # 123 Col. Polanco</span>
-              <span class="status">Status: {{ status.aprobada ? "Aprobada" : "Denegada" }}</span>
+              <span class="status"
+                >Status: {{ status.aprobada ? "Aprobada" : "Denegada" }}</span
+              >
             </div>
             <div class="status-time">
               <span class="status-time-text">Jul 5</span>
@@ -99,6 +109,10 @@
         </b-list-group>
       </b-col>
     </b-row>
+      </b-col>
+    </b-row>
+
+    
     <Footer />
   </b-container>
 </template>
@@ -106,11 +120,13 @@
 <script>
 // @ is an alias to /src
 import Footer from "@/components/Footer.vue";
+import SideMenu from "@/components/SideMenu.vue";
 
 export default {
   name: "Solicitudes",
   components: {
     Footer,
+    SideMenu
   },
   data() {
     return {
@@ -128,7 +144,6 @@ export default {
 <style lang="scss">
 .solicitudes-view {
   padding-top: 98px;
-
   .view-title {
     padding-left: 18px;
     padding-right: 18px;
@@ -178,7 +193,8 @@ export default {
             display: block;
             text-align: left;
           }
-          .direction, .status {
+          .direction,
+          .status {
             color: #858687;
             font-family: "Montserrat", sans-serif;
             font-size: 12px;

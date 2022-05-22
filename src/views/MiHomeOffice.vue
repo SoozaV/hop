@@ -1,6 +1,7 @@
 <template>
   <b-container class="mi-home-office">
     <b-row align-h="center">
+      <SideMenu />
       <b-col lg="8">
         <b-form>
           <b-row class="form-field-container sign-user mx-auto mb-5">
@@ -128,15 +129,16 @@
 <script>
 // @ is an alias to /src
 import Footer from "@/components/Footer.vue";
+import SideMenu from "@/components/SideMenu.vue"
 
 export default {
   name: "MiHomeOffice",
   components: {
     Footer,
+    SideMenu
   },
   data() {
     return {
-      star: require("../assets/img/star@4x.webp"),
       imagenPrincipal: require("../assets/img/office.png"),
       selected: {
         idioma: null,
@@ -159,7 +161,6 @@ export default {
 <style lang="scss">
 .mi-home-office {
   padding-top: 98px;
-
   .count {
     display: flex;
     position: relative;

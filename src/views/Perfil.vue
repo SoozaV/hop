@@ -1,6 +1,7 @@
 <template>
   <b-container class="perfil">
     <b-row>
+      <SideMenu />
       <b-col>
         <b-form>
           <b-row class="form-field-container sign-user mx-auto">
@@ -175,11 +176,13 @@
 <script>
 // @ is an alias to /src
 import Footer from "@/components/Footer.vue";
+import SideMenu from "@/components/SideMenu.vue";
 
 export default {
   name: "Perfil",
   components: {
     Footer,
+    SideMenu
   },
   data() {
     return {

@@ -1,5 +1,5 @@
 <template>
-  <b-row class="property-container" :style="{'background-color': bgColor}">
+  <b-row class="property-container" :style="{ 'background-color': bgColor }">
     <b-col cols="5">
       <b-img :src="propertyImage" fluid-grow alt=""></b-img>
     </b-col>
@@ -7,18 +7,23 @@
       <b-col class="rank-col">
         <div class="rank">3.0</div>
         <div class="stars">
-          <b-img :src="star" alt="" />
-          <b-img :src="star" alt="" />
-          <b-img :src="star" alt="" />
-          <b-img :src="star" alt="" />
-          <b-img :src="star" alt="" />
+          <b-rating />
         </div>
       </b-col>
       <h2>Grat<br />Co-Working</h2>
       <div class="separador"></div>
       <h3>Example Address #77</h3>
+      <b-row class="bottom-columns inner">
+        <b-col cols="5"
+          ><p class="price"><span class="symbol">$</span> 1430/ mens</p></b-col
+        >
+        <b-col
+          ><p class="price">
+            Book <b-button class="shadow-none border-0"></b-button></p
+        ></b-col>
+      </b-row>
     </b-col>
-    <b-row class="bottom-columns">
+    <b-row class="bottom-columns outer">
       <b-col cols="5"
         ><p class="price"><span class="symbol">$</span> 1430/ mens</p></b-col
       >
@@ -39,7 +44,6 @@ export default {
   data() {
     return {
       propertyImage: require("../assets/img/property@4x.webp"),
-      star: require("../assets/img/star@4x.webp"),
     };
   },
 };
@@ -91,6 +95,12 @@ export default {
     }
     .stars {
       display: flex;
+      .b-rating {
+        display: block;
+        padding: 0;
+        background: transparent;
+        border: 0;
+      }
       img {
         width: 15px;
         height: 15px;
@@ -105,6 +115,46 @@ export default {
       justify-content: center;
       &:last-child {
         justify-content: flex-end;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .property-container {
+    .bottom-columns {
+      &.inner {
+        display: none;
+      }
+      &.outer {
+        display: flex;
+      }
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .property-container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    .rank-col {
+      .rank {
+        font-size: 20px;
+      }
+    }
+    h2 {
+      font-size: 42px!important;
+    }
+    h3 {
+      font-size: 20px!important;
+    }
+    .bottom-columns {
+      &.inner {
+        display: flex;
+        & > div:first-child {
+          justify-content: flex-start;
+        }
+      }
+      &.outer {
+        display: none;
       }
     }
   }
