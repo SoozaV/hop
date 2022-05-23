@@ -89,32 +89,52 @@
           <b-row class="form-field-container mt-2 mx-auto">
             <b-col>
               <b-form-group
-                id="input-group-1"
+                id="input-group-disponibilidad"
                 label="Disponibilidad"
-                label-for="input-1"
+                label-for="input-disponibilidad"
                 label-align="left"
                 class="custom-select"
               >
-                <!-- Horario -->
-                <b-form-select
-                  onfocus="this.size=5;"
-                  onblur="this.size=1;"
-                  onchange="this.size=1; this.blur();"
-                  onfocusout="this.size=null;"
-                  v-model="selected.disponibilidad"
-                  :options="optionsDisponibilidad"
-                ></b-form-select>
+                <b-dropdown
+                  size="md"
+                  text="Tipos de horario"
+                  boundary="viewport"
+                >
+                  <b-form-checkbox name="checkbox-1">
+                    Opción 1
+                  </b-form-checkbox>
+                  <b-form-checkbox name="checkbox-2">
+                    Opción 2
+                  </b-form-checkbox>
+                  <b-form-checkbox name="checkbox-3">
+                    Opción 3
+                  </b-form-checkbox>
+                </b-dropdown>
               </b-form-group>
             </b-col>
             <b-col class="right-form-col col">
               <b-form-group
-                id="input-group-1"
+                id="input-group-espacio"
                 label="Tipo de espacio"
-                label-for="input-1"
+                label-for="input-espacio"
                 label-align="left"
                 class="custom-select"
               >
-                <!-- Características -->
+                <b-dropdown
+                  size="md"
+                  text="Tipos de espacio"
+                  boundary="viewport"
+                >
+                  <b-form-checkbox name="checkbox-1">
+                    Opción 1
+                  </b-form-checkbox>
+                  <b-form-checkbox name="checkbox-2">
+                    Opción 2
+                  </b-form-checkbox>
+                  <b-form-checkbox name="checkbox-3">
+                    Opción 3
+                  </b-form-checkbox>
+                </b-dropdown>
               </b-form-group>
             </b-col>
           </b-row>
@@ -222,9 +242,44 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 .home-search {
-  margin: 0 auto;
+  margin: 0 auto!important;
   max-width: 920px !important;
   padding-top: 20px;
+    .b-dropdown {
+    width: 100%;
+    max-width: 100%;
+    button.btn {
+      text-align: left;
+      font-family: "Montserrat", sans-serif;
+      color: #1d1d1d;
+      background: transparent;
+      border: 0;
+      margin: 0;
+      padding-left: 0;
+      padding-right: 0;
+      &:focus {
+        box-shadow: none;
+      }
+      &:after {
+          position: absolute;
+          right: 5px;
+          top: 15px;
+      }
+    }
+    .dropdown-menu {
+      padding: 10px;
+      .custom-checkbox {
+        display: flex;
+        padding: 5px 0;
+        input {
+          margin-right: 7px;
+        }
+        label {
+          flex: 1 1 0;
+        }
+      }
+    }
+  }
   .carousel {
     margin-top: 44px;
     margin-bottom: 44px;

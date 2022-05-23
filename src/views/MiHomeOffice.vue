@@ -26,11 +26,9 @@
             >
               <div class="rank">3.0</div>
               <div class="stars">
-                <b-img :src="star" alt="" />
-                <b-img :src="star" alt="" />
-                <b-img :src="star" alt="" />
-                <b-img :src="star" alt="" />
-                <b-img :src="star" alt="" />
+
+               <b-rating />
+
               </div>
               <h3>Emilio Castelar #83</h3>
               <div class="separador"></div>
@@ -243,6 +241,12 @@ export default {
     }
     .stars {
       display: flex;
+      .b-rating {
+        display: block;
+        padding: 0;
+        background: transparent;
+        border: 0;
+      }
       img {
         width: 15px;
         height: 15px;

@@ -9,8 +9,8 @@
               Comparte o promociona tu espacio de trabajo y genera ingresos
               extra.
             </h3>
-            <b-button type="submit" class="hop-btn shadow-none"
-              >Más información</b-button
+            <b-button to="/registro" type="submit" class="hop-btn shadow-none"
+              >Regístrate</b-button
             >
           </b-col>
         </b-row>

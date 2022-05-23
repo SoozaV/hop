@@ -6,13 +6,13 @@
           <img
             :src="logo"
             class="hop-logo"
-            v-bind:class="{ white: $route.name === 'Home' }"
+            v-bind:class="{ white: $route.name === 'Home' || $route.name === 'Registro'}"
           />
         </router-link>
       </b-col>
       <b-col
         class="col menu-col"
-        v-bind:class="{ white: $route.name === 'Home' }"
+        v-bind:class="{ white: $route.name === 'Home' || $route.name === 'Registro'}"
         style="display: flex; justify-content: flex-end"
       >
         <router-link v-if="$route.name === 'Home'" to="/login">
